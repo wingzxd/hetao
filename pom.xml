@@ -9,11 +9,10 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>mall-web</module>
-        <module>mall-service</module>
-        <module>mall-core</module>
-        <module>mall-entity</module>
-        <module>mall-service-api</module>
+        <module>hetao-h5</module>
+        <module>hetao-service</module>
+        <module>hetao-core</module>
+        <module>hetao-entity</module>
     </modules>
 
     <!-- 公共的一些属性 -->

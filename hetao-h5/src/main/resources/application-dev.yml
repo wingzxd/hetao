@@ -1,0 +1,9 @@
+server:
+  port: 9080
+spring:
+  application:
+    name: hetao-h5
+  cloud:
+   nacos:
+    discovery:
+     server-addr: 172.20.60.57:8848
