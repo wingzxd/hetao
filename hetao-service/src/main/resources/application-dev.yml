@@ -4,13 +4,13 @@ spring:
   profiles:
     include: dev_jdbc
   application:
-    name: hetao-service-zdf
+    name: hetao-service
   cloud:
    nacos:
     discovery:
      server-addr: 172.20.60.57:8848
 mybatis:
-  type-aliases-package: com.baxianguohai.hetaodamai.mall.service.dao
+  type-aliases-package: com.baxianguohai.hetaodamai.biz.dao
   mapper-locations: classpath:mapper/*.xml
 
 logging:
