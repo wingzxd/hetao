@@ -1,0 +1,49 @@
+spring:
+  profiles:
+    active: dev
+
+---
+#开发环境
+spring:
+  profiles: dev
+  application:
+    name: hetao-service
+  cloud:
+    nacos:
+      config:
+        #enabled: false
+        server-addr: 172.20.60.57:8848
+        file-extension: yaml #dataid 的名称就是application的name加file-extension
+        namespace: 26075ae7-87e3-43e6-9b58-d0765373cf4e # 开发环境  指定 具体的namespace
+        group: HETAO-SERVICE # 分组名
+        ext-config[0]:
+          data-id: config-jdbc.yaml
+          group: HETAO-SERVICE
+          refresh: true #自动刷新
+        ext-config[1]:
+          data-id: config-mybatis.yaml
+          group: HETAO-SERVICE
+          refresh: true #自动刷新
+
+---
+#测试环境
+spring:
+  profiles: test
+  application:
+    name: hetao-service
+  cloud:
+    nacos:
+      config:
+        #enabled: false
+        server-addr: 172.20.60.57:8848
+        file-extension: yaml #dataid 的名称就是application的name加file-extension
+        namespace: 6757ba63-3e9a-4130-bd25-6aa5faa1f205 # 测试环境  指定 具体的namespace
+        group: HETAO-SERVICE # 分组名
+        ext-config[0]:
+          data-id: config-jdbc.yaml
+          group: HETAO-SERVICE
+          refresh: true #自动刷新
+        ext-config[1]:
+          data-id: config-mybatis.yaml
+          group: HETAO-SERVICE
+          refresh: true #自动刷新 
