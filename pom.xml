@@ -12,7 +12,10 @@
         <module>hetao-h5</module>
         <module>hetao-service</module>
         <module>hetao-core</module>
-        <module>hetao-entity</module>
+        <module>hetao-share</module>
+        <module>hetao-core</module>
+        <module>hetao-share</module>
+        <module>hetao-biz</module>
     </modules>
 
     <!-- 公共的一些属性 -->
@@ -76,6 +79,10 @@
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
 </project>
