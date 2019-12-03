@@ -20,6 +20,10 @@ spring:
           data-id: config-jdbc.yaml
           group: HETAO-SERVICE
           refresh: true #自动刷新
+        ext-config[1]:
+          data-id: config-mybatis.yaml
+          group: HETAO-SERVICE
+          refresh: true #自动刷新
 
 ---
 #测试环境
@@ -39,3 +43,7 @@ spring:
           data-id: config-jdbc.yaml
           group: HETAO-SERVICE
           refresh: true #自动刷新
+        ext-config[1]:
+          data-id: config-mybatis.yaml
+          group: HETAO-SERVICE
+          refresh: true #自动刷新 
