@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.baxianguohai.hetao.biz.dal.mapper.OrderMapper">
+
+    <!-- 用于select查询公用抽取的列 -->
+    <sql id="sql_columns">
+		`id`, 		`order_serial`, 		`receiver_name`, 		`receiver_phone`, 		`receiver_address`, 		`total_product_price`, 		`express_price`, 		`order_price`, 		`pay_status`, 		`order_status`, 		`is_delete`, 		`gmt_created`, 		`gmt_modified`	</sql>
+
+    <resultMap id="HtOrderMap" type="com.baxianguohai.hetao.biz.dal.model.OrderDO">
+        <result property="id" column="id"/>
+        <result property="orderSerial" column="order_serial"/>
+        <result property="receiverName" column="receiver_name"/>
+        <result property="receiverPhone" column="receiver_phone"/>
+        <result property="receiverAddress" column="receiver_address"/>
+        <result property="totalProductPrice" column="total_product_price"/>
+        <result property="expressPrice" column="express_price"/>
+        <result property="orderPrice" column="order_price"/>
+        <result property="payStatus" column="pay_status"/>
+        <result property="orderStatus" column="order_status"/>
+        <result property="isDelete" column="is_delete"/>
+        <result property="gmtCreated" column="gmt_created"/>
+        <result property="gmtModified" column="gmt_modified"/>
+    </resultMap>
+
+</mapper>
