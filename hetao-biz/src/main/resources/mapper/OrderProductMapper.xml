@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.baxianguohai.hetao.biz.dal.mapper.OrderProductMapper">
+
+    <!-- 用于select查询公用抽取的列 -->
+    <sql id="sql_columns">
+		`id`, 		`order_id`, 		`order_serial`, 		`product_id`, 		`product_name`, 		`product_price`, 		`product_number`, 		`product_small_icon`, 		`is_delete`, 		`gmt_created`, 		`gmt_modified`	</sql>
+
+    <resultMap id="HtOrderProductMap" type="com.baxianguohai.hetao.biz.dal.model.OrderProductDO">
+        <result property="id" column="id"/>
+        <result property="orderId" column="order_id"/>
+        <result property="orderSerial" column="order_serial"/>
+        <result property="productId" column="product_id"/>
+        <result property="productName" column="product_name"/>
+        <result property="productPrice" column="product_price"/>
+        <result property="productNumber" column="product_number"/>
+        <result property="productSmallIcon" column="product_small_icon"/>
+        <result property="isDelete" column="is_delete"/>
+        <result property="gmtCreated" column="gmt_created"/>
+        <result property="gmtModified" column="gmt_modified"/>
+    </resultMap>
+
+</mapper>
