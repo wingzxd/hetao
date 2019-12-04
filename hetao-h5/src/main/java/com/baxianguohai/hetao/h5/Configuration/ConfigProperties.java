@@ -1,5 +1,5 @@
 
-package com.baxianguohai.hetaodamai.mall.web.Configuration;
+package com.baxianguohai.hetao.h5.Configuration;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
