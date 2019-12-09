@@ -11,11 +11,10 @@
     <modules>
         <module>hetao-h5</module>
         <module>hetao-service</module>
-        <module>hetao-core</module>
         <module>hetao-share</module>
         <module>hetao-core</module>
-        <module>hetao-share</module>
         <module>hetao-biz</module>
+        <module>hetao-gateway</module>
     </modules>
 
     <!-- 公共的一些属性 -->

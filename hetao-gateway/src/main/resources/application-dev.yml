@@ -1,0 +1,23 @@
+server:
+  port: 9045
+spring:
+  application:
+    name: hetao-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 172.20.60.57:8848
+    gateway:
+      discovery:
+        locator:
+          #让gateway通过服务发现组件找到其他的微服务
+          enabled:true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
