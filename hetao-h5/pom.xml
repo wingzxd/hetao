@@ -74,6 +74,18 @@
             <artifactId>lombok</artifactId>
             <version>1.18.8</version>
         </dependency>
+        <!--sentinel熔断-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-core</artifactId>
+            <version>1.7.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-annotation-aspectj</artifactId>
+            <version>1.4.3</version>
+        </dependency>
+        <!--sentinel熔断-->
     </dependencies>
 
     <!--将本项目打包成一个对应的jar包-->

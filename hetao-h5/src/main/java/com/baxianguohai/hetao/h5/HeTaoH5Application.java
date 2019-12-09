@@ -1,5 +1,7 @@
 package com.baxianguohai.hetao.h5;
 
+import com.baxianguohai.hetao.h5.Configuration.Sentinel.SentinelRuleConfig;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -14,6 +16,11 @@ public class HeTaoH5Application {
 
 
     public static void main(String[] args) {
+
+        //熔断配置
+        SentinelRuleConfig.initFlowRules();
+        SentinelRuleConfig.initDegradeRule();
+
         SpringApplication.run(HeTaoH5Application.class, args);
     }
 
