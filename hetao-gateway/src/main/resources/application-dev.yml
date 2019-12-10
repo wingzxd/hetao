@@ -7,11 +7,18 @@ spring:
     nacos:
       discovery:
         server-addr: 172.20.60.57:8848
+        namespace: 26075ae7-87e3-43e6-9b58-d0765373cf4e
     gateway:
       discovery:
         locator:
-          #让gateway通过服务发现组件找到其他的微服务
-          enabled:true
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: hetao-h5
+          uri: lb://hetao-h5
+          predicates:
+            - Path=/hetao/**
+
 management:
   endpoints:
     web:
@@ -20,4 +27,7 @@ management:
   endpoint:
     health:
       show-details: always
+logging:
+  level:
+    org.springframework.cloud.gateway: trace
 

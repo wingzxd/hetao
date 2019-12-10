@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Slf4j
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/hetao/user")
 public class UserController {
 
     @Autowired
     private UserManager userManager;
-
+    @RequestMapping("/login")
     public Result login(){
         Result result = new Result();
         result.setErrorMessage("成功");
