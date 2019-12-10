@@ -1,6 +1,7 @@
 package com.baxianguohai.hetao.h5.controller;
 
 import com.baixianguohai.hetao.core.manager.OrderManager;
+import com.baixianguohai.hetao.core.vo.OrderListVO;
 import com.baxianguohai.hetao.entity.bo.OrderBO;
 import com.baxianguohai.hetao.h5.common.Result;
 import lombok.extern.slf4j.Slf4j;
@@ -8,6 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * 订单主表
@@ -17,15 +21,22 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Slf4j
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/hetao/order")
 public class OrderController {
 
     @Autowired
     private OrderManager orderManager;
 
     @RequestMapping("/save")
-    public Object save(@RequestParam String userId, @RequestParam String productId){
+    public Object save(@RequestParam String userId, @RequestParam String productId) {
         String msg = orderManager.save(userId, productId);
         return Result.success(msg);
     }
+
+    @RequestMapping("/list")
+    public Object list(@RequestParam String userId, @RequestParam int orderStatus) {
+        Map<String, Object> result = orderManager.list(userId, orderStatus);
+        return Result.success(result);
+    }
+
 }

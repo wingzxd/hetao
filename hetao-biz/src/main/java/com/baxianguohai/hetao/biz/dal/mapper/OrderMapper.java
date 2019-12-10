@@ -2,7 +2,6 @@ package com.baxianguohai.hetao.biz.dal.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baxianguohai.hetao.biz.dal.model.OrderDO;
-import org.apache.ibatis.annotations.Mapper;
 
 /**
  * 订单主表
@@ -12,7 +11,4 @@ import org.apache.ibatis.annotations.Mapper;
  */
 //@Mapper
 public interface OrderMapper extends BaseMapper<OrderDO> {
-
-
-
 }

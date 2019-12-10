@@ -1,5 +1,7 @@
 package com.baixianguohai.hetao.core.manager;
 
+import java.util.Map;
+
 /**
  * 订单主表
  *
@@ -8,4 +10,6 @@ package com.baixianguohai.hetao.core.manager;
  */
 public interface OrderManager {
     String save(String userId, String productId);
+
+    Map<String, Object> list(String userId, int orderStatus);
 }

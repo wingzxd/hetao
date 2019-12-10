@@ -1,7 +1,7 @@
 package com.baxianguohai.hetao.service.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baxianguohai.hetao.entity.bo.OrderBO;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * 订单主表
@@ -11,4 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 public interface OrderService {
     String save(String userId, String productId);
+
+    Page<OrderBO> list(String userId, Integer orderStatus);
 }

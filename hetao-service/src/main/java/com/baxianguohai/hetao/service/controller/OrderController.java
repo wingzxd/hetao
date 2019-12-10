@@ -1,5 +1,7 @@
 package com.baxianguohai.hetao.service.controller;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baxianguohai.hetao.entity.bo.OrderBO;
 import com.baxianguohai.hetao.service.service.OrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,5 +24,11 @@ public class OrderController {
     public String save(String userId, String productId) {
         String save = orderService.save(userId, productId);
         return save;
+    }
+
+    @RequestMapping(value = "/order/list")
+    public Page<OrderBO> list(String userId, Integer orderStatus) {
+        Page<OrderBO> orderBOPage = orderService.list(userId, orderStatus);
+        return orderBOPage;
     }
 }
