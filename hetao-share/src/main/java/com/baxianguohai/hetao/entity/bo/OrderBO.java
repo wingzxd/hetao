@@ -70,4 +70,9 @@ public class OrderBO implements Serializable {
      * 修改时间
      */
     private Date gmtModified;
+
+    /**
+     * 用户id
+     */
+    private Integer userId;
 }

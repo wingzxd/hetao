@@ -37,6 +37,7 @@ public class OrderConverter {
         orderBO.setIsDelete(orderDO.getIsDelete());
         orderBO.setGmtCreated(orderDO.getGmtCreated());
         orderBO.setGmtModified(orderDO.getGmtModified());
+        orderBO.setUserId(orderDO.getUserId());
         return orderBO;
     }
 
@@ -64,6 +65,7 @@ public class OrderConverter {
         orderDO.setIsDelete(orderBO.getIsDelete());
         orderDO.setGmtCreated(orderBO.getGmtCreated());
         orderDO.setGmtModified(orderBO.getGmtModified());
+        orderDO.setUserId(orderBO.getUserId());
         return orderDO;
     }
 }
