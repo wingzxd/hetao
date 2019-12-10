@@ -5,7 +5,9 @@ package com.baxianguohai.hetao.service.convert;
 import com.baxianguohai.hetao.biz.dal.model.ProductDO;
 import com.baxianguohai.hetao.entity.bo.ProductBO;
 
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * 商品表实体类转换器
@@ -40,6 +42,13 @@ public class ProductConverter {
         return productBO;
     }
 
+    public static List<ProductBO> convertToDO2BO(List<ProductDO> productDOList){
+        if(Objects.isNull(productDOList)){
+            return null;
+        }
+        return productDOList.stream().map(ProductConverter::convertToDO2BO).collect(Collectors.toList());
+    }
+
     /**
      * Convert ProductBO to ProductDO
      *
@@ -63,5 +72,12 @@ public class ProductConverter {
         productDO.setGmtCreated(productBO.getGmtCreated());
         productDO.setGmtModified(productBO.getGmtModified());
         return productDO;
+    }
+
+    public static List<ProductDO> convertToBO2DO(List<ProductBO> productBOList){
+        if(Objects.isNull(productBOList)){
+            return null;
+        }
+        return productBOList.stream().map(ProductConverter::convertToBO2DO).collect(Collectors.toList());
     }
 }

@@ -13,8 +13,8 @@
         <module>hetao-service</module>
         <module>hetao-share</module>
         <module>hetao-core</module>
-        <module>hetao-share</module>
         <module>hetao-biz</module>
+        <module>hetao-gateway</module>
     </modules>
 
     <!-- 公共的一些属性 -->

@@ -1,0 +1,33 @@
+server:
+  port: 9045
+spring:
+  application:
+    name: hetao-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 172.20.60.57:8848
+        namespace: 26075ae7-87e3-43e6-9b58-d0765373cf4e
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: hetao-h5
+          uri: lb://hetao-h5
+          predicates:
+            - Path=/hetao/**
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+logging:
+  level:
+    org.springframework.cloud.gateway: trace
+

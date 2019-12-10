@@ -1,6 +1,8 @@
 package com.baxianguohai.hetao.h5.controller;
 
 import com.baixianguohai.hetao.core.manager.UserManager;
+import com.baxianguohai.hetao.h5.common.Result;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,10 +16,17 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Slf4j
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/hetao/user")
 public class UserController {
 
     @Autowired
     private UserManager userManager;
+    @RequestMapping("/login")
+    public Result login(){
+        Result result = new Result();
+        result.setErrorMessage("成功");
+        result.setSuccess(true);
+        return result;
+    }
 
 }
