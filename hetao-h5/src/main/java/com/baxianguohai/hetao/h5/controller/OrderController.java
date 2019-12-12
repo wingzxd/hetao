@@ -34,8 +34,9 @@ public class OrderController {
     }
 
     @RequestMapping("/list")
-    public Object list(@RequestParam String userId, @RequestParam int orderStatus) {
-        Map<String, Object> result = orderManager.list(userId, orderStatus);
+    public Object list(@RequestParam String userId, @RequestParam(required = false) Integer orderStatus,
+                       @RequestParam(defaultValue = "1") int pageNumber) {
+        Map<String, Object> result = orderManager.list(userId, orderStatus, pageNumber);
         return Result.success(result);
     }
 

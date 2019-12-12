@@ -27,11 +27,6 @@ public class OrderListVO {
     private List<OrderListProductVO> orderListProductVOList;
 
     /**
-     * 订单商品个数
-     */
-    private int orderProductNumber;
-
-    /**
      * 订单金额
      */
     private BigDecimal orderPrice;

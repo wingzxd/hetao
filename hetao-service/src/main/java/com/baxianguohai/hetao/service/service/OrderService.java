@@ -12,5 +12,5 @@ import com.baxianguohai.hetao.entity.bo.OrderBO;
 public interface OrderService {
     String save(String userId, String productId);
 
-    Page<OrderBO> list(String userId, Integer orderStatus);
+    Page<OrderBO> list(String userId, Integer orderStatus, Integer pageNumber);
 }

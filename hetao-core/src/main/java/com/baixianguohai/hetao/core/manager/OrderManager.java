@@ -11,5 +11,5 @@ import java.util.Map;
 public interface OrderManager {
     String save(String userId, String productId);
 
-    Map<String, Object> list(String userId, int orderStatus);
+    Map<String, Object> list(String userId, Integer orderStatus, int pageNumber);
 }

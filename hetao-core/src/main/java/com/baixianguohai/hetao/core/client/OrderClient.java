@@ -1,11 +1,10 @@
 package com.baixianguohai.hetao.core.client;
 
-import com.baixianguohai.hetao.core.vo.OrderListVO;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baxianguohai.hetao.entity.bo.OrderBO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.List;
 
 /**
  * @author:zdf
@@ -14,9 +13,10 @@ import java.util.List;
 @FeignClient(value = "hetao-service")
 public interface OrderClient {
 
-    @RequestMapping(value = "/order/save")
+    @RequestMapping(value = "/hetao/order/save")
     String save(@RequestParam("userId") String userId, @RequestParam("productId") String productId);
 
-    @RequestMapping(value = "/order/list")
-    List<OrderListVO> list(@RequestParam("userId") String userId, @RequestParam("orderStatus") int orderStatus);
+    @RequestMapping(value = "/hetao/order/list")
+    Page<OrderBO> list(@RequestParam("userId") String userId, @RequestParam("orderStatus") Integer orderStatus,
+                       @RequestParam("pageNumber") Integer pageNumber);
 }

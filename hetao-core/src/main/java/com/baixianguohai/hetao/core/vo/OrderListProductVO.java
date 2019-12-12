@@ -13,7 +13,7 @@ public class OrderListProductVO {
     /**
      * 订单商品ID
      */
-    private String productId;
+    private int productId;
 
     /**
      * 订单商品名称

@@ -2,11 +2,12 @@ package com.baxianguohai.hetao.h5;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @EnableDiscoveryClient
 @EnableFeignClients(basePackages = {"com.baixianguohai.hetao.core.client"})
 @ComponentScan(basePackages = {"com.baxianguohai.hetao","com.baixianguohai.hetao.core.manager.impl"})

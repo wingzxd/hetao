@@ -23,6 +23,6 @@ public class OrderServiceApplicationTests {
 
     @Test
     public void selectPage(){
-        Page<OrderBO> list = orderService.list("123", null);
+        Page<OrderBO> list = orderService.list("123", null, null);
     }
 }

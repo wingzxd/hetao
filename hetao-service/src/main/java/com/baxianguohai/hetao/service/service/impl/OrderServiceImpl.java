@@ -60,10 +60,14 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Page<OrderBO> list(String userId, Integer orderStatus) {
+    public Page<OrderBO> list(String userId, Integer orderStatus, Integer pageNumber) {
         QueryWrapper<OrderDO> queryWrapper = new QueryWrapper<>();
-        queryWrapper.lambda().eq(OrderDO::getOrderStatus, orderStatus);
+        if (orderStatus != null){
+            queryWrapper.lambda().eq(OrderDO::getOrderStatus, orderStatus);
+        }
+        queryWrapper.lambda().eq(OrderDO::getUserId, userId);
         Page<OrderDO> page = new Page<>();
+        page.setCurrent(pageNumber);
         page.setDesc("gmt_created");
         IPage<OrderDO> orderDOPage = orderMapper.selectPage(page, queryWrapper);
         Page<OrderBO> pageResult = new Page<>();

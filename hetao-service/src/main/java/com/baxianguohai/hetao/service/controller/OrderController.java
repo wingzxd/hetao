@@ -16,19 +16,20 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Slf4j
 @RestController
+@RequestMapping("/hetao/order")
 public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    @RequestMapping(value = "/order/save")
+    @RequestMapping(value = "/save")
     public String save(String userId, String productId) {
         String save = orderService.save(userId, productId);
         return save;
     }
 
-    @RequestMapping(value = "/order/list")
-    public Page<OrderBO> list(String userId, Integer orderStatus) {
-        Page<OrderBO> orderBOPage = orderService.list(userId, orderStatus);
+    @RequestMapping(value = "/list")
+    public Page<OrderBO> list(String userId, Integer orderStatus, Integer pageNumber) {
+        Page<OrderBO> orderBOPage = orderService.list(userId, orderStatus, pageNumber);
         return orderBOPage;
     }
 }
