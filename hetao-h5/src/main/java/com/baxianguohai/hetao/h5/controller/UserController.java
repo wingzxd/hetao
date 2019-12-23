@@ -1,10 +1,13 @@
 package com.baxianguohai.hetao.h5.controller;
 
 import com.baixianguohai.hetao.core.manager.UserManager;
-import com.baxianguohai.hetao.h5.common.Result;
+import com.baxianguohai.hetao.entity.bo.UserBO;
+import com.baxianguohai.hetao.entity.common.Result;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,12 +24,17 @@ public class UserController {
 
     @Autowired
     private UserManager userManager;
-    @RequestMapping("/login")
-    public Result login(){
-        Result result = new Result();
-        result.setErrorMessage("成功");
-        result.setSuccess(true);
-        return result;
+
+    @PostMapping("/login")
+    public Result<String> login(@RequestBody UserBO userBO) {
+     return userManager.login(userBO);
     }
+
+    @PostMapping("/register")
+    public Result<String> register(@RequestBody UserBO userBO){
+     return userManager.register(userBO);
+    }
+
+
 
 }

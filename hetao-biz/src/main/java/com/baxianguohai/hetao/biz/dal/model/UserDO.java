@@ -1,6 +1,8 @@
 package com.baxianguohai.hetao.biz.dal.model;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -29,7 +31,7 @@ public class UserDO{
     /**
      * 手机号，登录名
      */
-    private Integer phone;
+    private String phone;
     /**
      * 登录密码
      */
@@ -41,9 +43,11 @@ public class UserDO{
     /**
      * 创建时间
      */
+    @TableField(fill = FieldFill.INSERT)
     private Date gmtCreated;
     /**
      * 修改时间
      */
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private Date gmtModified;
 }

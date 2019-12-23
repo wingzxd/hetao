@@ -5,6 +5,7 @@ package com.baxianguohai.hetao.service.convert;
 import com.baxianguohai.hetao.biz.dal.model.UserDO;
 import com.baxianguohai.hetao.entity.bo.UserBO;
 
+import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -39,21 +40,21 @@ public class UserConverter {
     /**
      * Convert UserBO to UserDO
      *
-     * @param htUserBO
+     * @param userBO
      * @return userDO
      */
-    public static UserDO convertToBO2DO(UserBO htUserBO) {
-        if (Objects.isNull(htUserBO)) {
+    public static UserDO convertToBO2DO(UserBO userBO) {
+        if (Objects.isNull(userBO)) {
             return null;
         }
         UserDO userDO = new UserDO();
-        userDO.setId(htUserBO.getId());
-        userDO.setName(htUserBO.getName());
-        userDO.setPhone(htUserBO.getPhone());
-        userDO.setPassword(htUserBO.getPassword());
-        userDO.setIsDelete(htUserBO.getIsDelete());
-        userDO.setGmtCreated(htUserBO.getGmtCreated());
-        userDO.setGmtModified(htUserBO.getGmtModified());
+        userDO.setId(userBO.getId());
+        userDO.setName(userBO.getName());
+        userDO.setPhone(userBO.getPhone());
+        userDO.setPassword(userBO.getPassword());
+        userDO.setIsDelete(userBO.getIsDelete());
+        userDO.setGmtCreated(new Date());
+        userDO.setGmtModified(new Date());
         return userDO;
     }
 }

@@ -28,7 +28,7 @@ public class UserBO implements Serializable {
     /**
      * 手机号，登录名
      */
-    private Integer phone;
+    private String phone;
     /**
      * 登录密码
      */
