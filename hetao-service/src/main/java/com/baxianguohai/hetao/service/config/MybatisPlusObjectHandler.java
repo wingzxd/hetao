@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  * mybatis-plus字段自填充设置
  *
  * @author chenjy
- * @date 2019/7/3 16:09
+ * @date 2019/12/20 16:09
  */
 @Component
 public class MybatisPlusObjectHandler implements MetaObjectHandler {
